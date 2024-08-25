@@ -39,6 +39,16 @@ services:
       postgres:
         condition: service_healthy
 
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - '3001:3001'
+    networks:
+      - 'my_net'
+    depends_on:
+      - backend
+
 volumes:
   pg-data:
 

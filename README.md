@@ -1,5 +1,7 @@
 # Basic Setup
 
+# Backend
+
 ## Cors
 
 app.enableCors();
@@ -104,8 +106,10 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Create directory unit-tests with the file:
         app.int-spec.ts
 
-## Frontend
+# Frontend
 
+    mpm install
+    npm install react-scripts --save
     npm install -g create-react-app 
     npx create-react-app frontend --template typescript
     npm install --save-dev @babel/plugin-proposal-private-property-in-object

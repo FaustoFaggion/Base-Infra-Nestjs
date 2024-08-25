@@ -99,7 +99,7 @@ const Signin = () => {
                         <button className="btn btn-primary" type="button" onClick={handleSignin}>Sign In</button>
                     </div>
                     <p className="text-end mt-2">
-                        Forgot Password? <Link to='/signin' className="ms-3">Sign Up</Link>
+                        Forgot Password? <Link to='/signup' className="ms-3">Sign Up</Link>
                     </p>
                 </form>
             </div>
