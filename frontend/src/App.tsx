@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signin from './components/auth/signin'
 import Signup from './components/auth/signup';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { UseAppContext } from './context/hook';
 import Profile from './components/user/profile';
 
