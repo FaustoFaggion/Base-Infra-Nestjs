@@ -1,0 +1,97 @@
+### Variables
+
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MTk0MjM5ZS1lY2IxLTQyNzgtODdlMC0zMzk2ODY5YWEyOTIiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjQ2MDA0MjYsImV4cCI6MTcyNDYwNDAyNn0.hgg-njxNNQIkPDn0zRPIogyW1uYDEIi2vcB0JkND2v4
+
+###
+
+POST http://localhost:3000/auth/signin HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "eu@email.com",
+    "password": "123"
+}
+
+###
+
+
+POST http://localhost:3000/auth/signup HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "eu@email.com",
+    "first_name": "eu",
+    "last_name": "é",
+    "password": "123"
+}
+
+###
+
+POST http://localhost:3000/user/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "eu@email.com",
+    "first_name": "eu",
+    "last_name": "er",
+    "password": "123"
+}
+
+###
+
+POST http://localhost:3000/user/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "tu@email.com",
+    "first_name": "tu",
+    "last_name": "ta",
+    "password": "12345"
+}
+
+###
+
+PUT http://localhost:3000/user/update HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "eu@email.com",
+    "first_name": "c",
+    "last_name": "er",
+    "password": "123"
+}
+
+###
+
+PUT http://localhost:3000/user/update-me HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+    "email": "eu@email.com",
+    "first_name": "cc",
+    "last_name": "er",
+    "password": "123"
+}
+
+###
+
+DELETE http://localhost:3000/user/delete/eu@email.com
+Authorization: Bearer {{access_token}}
+###
+
+DELETE http://localhost:3000/user/delete-all
+Authorization: Bearer {{access_token}}
+###
+
+GET http://localhost:3000/user/find-one/eu@email.com
+Authorization: Bearer {{access_token}}
+###
+
+GET http://localhost:3000/user/find-all
+Authorization: Bearer {{access_token}}

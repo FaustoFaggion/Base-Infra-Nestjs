@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - '5432:5432'
+    networks:
+      - my_net
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:      
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB} -t 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+  
+  backend:
+    build: ./backend
+    container_name: backend
+    env_file:
+      - ./backend/config/env/production.env
+    # environment:
+    #   PORT: "3000"
+    #   DATABASE_URL: "postgres://myuser:mypassword@postgres:5432/mydb?schema=public"
+    #   JWT_SECRET: "paz"
+    #   JWT_EXPIRES_IN: "1h"
+    ports:
+      - '3000:3000'
+    networks:
+      - my_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pg-data:
+
+networks:
+  my_net:
+    driver: bridge
+    name: my_net

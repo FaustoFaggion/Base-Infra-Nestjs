@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String        @id			@default(uuid())
+  email           String        @unique
+  password        String
+  first_name      String?
+  last_name       String?
+
+  roles           Role[]
+
+  @@map("user")        
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model DifferentialCylinder {
+
+      id                                String @id			@default(uuid())
+
+    type                                String?
+
+    series                              String?
+
+    mounting_type                       String?
+
+    bore_diam_mm                        Int
+    
+    rod_diam_mm                         Int
+
+    max_stroke_length_in_mm             Int
+
+    design_principle                    String
+
+    component_series                    String
+
+    line_connection                     String
+    
+    line_connection_position_at_head    String
+
+    line_connection_position_at_base    String
+
+    piston_rod_design                   String
+
+    piston_rod_end                      String
+
+    end_piston_cushion                  String
+    
+    oil_type                            String
+    
+    max_pressure_bar                    Int
+}

@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@nestjs/testing": "^10.3.9",
+    "@types/joi": "^17.2.3",
+    "prisma": "^5.18.0"
+  },
+  "dependencies": {
+    "@nestjs/config": "^3.2.2",
+    "@prisma/client": "^5.16.0",
+    "axios": "^1.7.2",
+    "bootstrap": "^5.3.3",
+    "joi": "^17.13.3",
+    "react-router-dom": "^6.24.1"
+  }
+}
