@@ -1,6 +1,6 @@
 ### Variables
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MTk0MjM5ZS1lY2IxLTQyNzgtODdlMC0zMzk2ODY5YWEyOTIiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjQ2MDA0MjYsImV4cCI6MTcyNDYwNDAyNn0.hgg-njxNNQIkPDn0zRPIogyW1uYDEIi2vcB0JkND2v4
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YWQxNGE4Yi1hZmY3LTQwNjItYTViMS00NjRlM2E2OWM4MmUiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjQ2MTEyODcsImV4cCI6MTcyNDYxNDg4N30.Wob7-YgFJMqkw6ZnQLdhjpWB_IER81Iy0JM2Dq9f05E
 
 ###
 
@@ -14,7 +14,6 @@ Authorization: Bearer {{access_token}}
 }
 
 ###
-
 
 POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
