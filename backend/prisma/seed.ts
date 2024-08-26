@@ -1,22 +1,28 @@
 import { PrismaClient } from '@prisma/client';
-
+import { Role } from "../src/auth/adapters/authorization/rbac.policy";
 
 const prisma = new PrismaClient();
 
 async function main() {
+  try {
+    console.log("Seeding data...");
 
+    let joao = await prisma.user.create({
+      data: {
+        email: "adm@email.com",
+        password: '123',
+        first_name: 'adm',
+        last_name: 'adm',
+        roles: [Role.ADMIN]  // Ensure Role.ADMIN is defined and valid
+      },
+    });
 
-	let joao = await prisma.user.create({
-		data: {
-		  login: "jopop",
-		  email: "joao@42sp.com.br",
-		  first_name: "João",
-		  last_name: "Silva",
-		  nickname: "Silvão",
-		  avatar: "https://i.pinimg.com/originals/e7/3a/7c/e73a7c77c2430210674a0c0627d9ca76.jpg",
-		  avatar_name: "Silvão", 
-		  points: 7,
-		},
-	  });
-
+    console.log("User created:", joao);
+  } catch (error) {
+    console.error("Error seeding data:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
 }
+
+main();

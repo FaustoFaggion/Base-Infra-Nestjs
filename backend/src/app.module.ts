@@ -36,7 +36,8 @@ export class AppModule implements NestModule {
     consumer
       .apply(AuthGuard)
       .exclude({path: 'auth/signin', method: RequestMethod.POST},
-      {path: 'auth/signup', method: RequestMethod.POST}
+      {path: 'auth/signup', method: RequestMethod.POST},
+      {path: 'user/create', method: RequestMethod.POST}
       )
       .forRoutes('*');
   }

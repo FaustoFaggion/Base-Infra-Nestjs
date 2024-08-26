@@ -50,6 +50,13 @@ npm install @nestjs/mapped-types - Used for Partial-Types
         npm install -g dotenv-cli
         dotenv -e ./config/env/development.env npx prisma migrate dev
 
+    Seeding:  
+        Package.json:  
+            "prisma": {  
+                "seed": "ts-node prisma/seed.ts"  
+            },  
+    CLI:
+        npx prisma db seed
 
 ## Backend Test
 ### Unit Test
