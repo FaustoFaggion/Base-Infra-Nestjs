@@ -35,6 +35,6 @@ import { RBAC } from "./adapters/authorization/rbac.policy";
                     useExisting: AuthPasswordStrategy
                 }
             ],
-    exports: [RBAC]
+    exports: [RBAC, AuthPasswordStrategy]
 })
 export class AuthModule {}

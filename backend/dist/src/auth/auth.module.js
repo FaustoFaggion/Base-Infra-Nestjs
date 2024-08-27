@@ -47,7 +47,7 @@ exports.AuthModule = AuthModule = __decorate([
                 useExisting: auth_password_strategy_1.AuthPasswordStrategy
             }
         ],
-        exports: [rbac_policy_1.RBAC]
+        exports: [rbac_policy_1.RBAC, auth_password_strategy_1.AuthPasswordStrategy]
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

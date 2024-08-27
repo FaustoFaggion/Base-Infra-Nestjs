@@ -1,6 +1,6 @@
 ### Variables
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Mzk4MGFkNC1kNjU2LTQ4M2YtOWQ1OS00MjhiYjk3MjEwZjEiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjQ2OTMwNjksImV4cCI6MTcyNDY5NjY2OX0.-wQurUYTjlv6-xsTsQ5Vkzf0CFeKDBZlqJvOZTT6Mdo
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkMDRmYTU5OS00MTkyLTQxMzQtYWZmYS00MTQwZTFiYTMxNTEiLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjQ3NjQ4MTgsImV4cCI6MTcyNDc2ODQxOH0.If26gxc-zrDBn0opbxKLdXd9FaV2PxOWJn0RcyBa0qQ
 
 ###
 
@@ -9,7 +9,7 @@ content-type: application/json
 Authorization: Bearer {{access_token}}
 
 {
-    "email": "eu@email.com",
+    "email": "vc@email.com",
     "password": "123"
 }
 
