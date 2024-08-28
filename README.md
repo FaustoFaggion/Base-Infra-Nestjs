@@ -115,19 +115,94 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 # Frontend
 
-    mpm install
+    npm install
     npm install react-scripts --save
     npm install -g create-react-app 
     npx create-react-app frontend --template typescript
     npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+### Components
+
+    Links:  
+        - https://www.youtube.com/watch?v=F0ZvDcOuBdo&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=1  
+        - https://reacttraining.com/blog/react-owner-components  
+
+    Client components:
+        - Are re-render in the browser.  
+        - Can not be owner of a server.  
+        - Can be parent of a server component.  
+
+    Server components:  
+        - It's just a HTML at client side.  
+        - It's not re-render at client side.   
+
+    Owner component:  
+        - An owner component "owns" the JSX of another component and can pass props into it.  
+        - Owner's re-render their children.  
+
+    Parent component:  
+        - A parent component cannot pass props into the child.  
+        - Parent's do not re-render their children.  
+
+
+### Props
+
+    Links:  
+        - https://www.youtube.com/watch?v=jDHBY6tV2SE&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=2  
+        - https://www.epicreact.dev/can-you-modify-react-props  
+
     
+### HOOKS
+
+#### UseState
+
+    State is data that can changes over time.  
+    Data can be different from one render to another.  
+
+    Links:  
+        - https://www.youtube.com/watch?v=V9i3cGD-mts&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2  
+
+#### UseEffect
+
+    Use to provide side effects into the application. Make something happen as a consequence of something else.  
+    Side effect will be a result of a state changing.  
+
+    Syntax:  
+        useEffect(() => {
+            The code we want to run
+                - run's when the component mount.  
+  
+            Optional return function  
+                return () => {
+                    -  run's when the component unmount.  
+                    - like a setup before run the code we want to run.    
+                }
+        },[]),  
+        
+        []:
+            - dependency array.  
+            - what useEffect should listen to.  
+            - if is empty it runs once when the component is mounted.
+
+    Links:  
+        - https://www.youtube.com/watch?v=-4XpG5_Lj_o&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=2  
+
+
+
+
+### SPA
+
+
 ### Bootstrap
 
     npm install bootstrap
 
 ### Routes
 
-    npm install react-router-dom
+    Links:  
+        https://www.youtube.com/watch?v=oTIJunBa6MA  
+    Package.json:  
+        npm install react-router-dom  
 
 ### Axios
 
@@ -141,7 +216,12 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
     npm install universal-cookie
 
+### Profile page
 
+    Link:  
+        https://www.youtube.com/watch?v=rSXnyQozUJg  
+    Package.json:  
+        npm install react-select  
 
 ## Docker
 

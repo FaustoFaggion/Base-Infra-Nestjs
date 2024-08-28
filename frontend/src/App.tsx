@@ -1,24 +1,39 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Signin from './components/auth/signin'
 import Signup from './components/auth/signup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { UseAppContext } from './context/hook';
-import Profile from './components/user/profile';
+import Profile from './components/user/profile/profile';
+import HomePage from './components/homepage/homepage';
+import NotFound from './components/homepage/notFound';
 
 function App() {
   const {state} = UseAppContext();
 
   const userInfo = state.userInfo
-  
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <HomePage />,
+      errorElement: <NotFound />
+    }, 
+    {
+      path: '/signin',
+      element: <Signin />,
+    },
+    {
+      path: '/signup',
+      element: <Signup />
+    },
+    {
+      path: '/profile',
+      element: <Profile />
+    }
+  ])
+
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path='/signin' element={<Signin />}/>
-          <Route path='/signup' element={<Signup />}/>
-          <Route path='/profile' element={<Profile />}/>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
   );
 }
 
