@@ -154,7 +154,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
 ### HOOKS
 
-#### UseState
+#### useState
 
     State is data that can changes over time.  
     Data can be different from one render to another.  
@@ -162,7 +162,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Links:  
         - https://www.youtube.com/watch?v=V9i3cGD-mts&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2  
 
-#### UseEffect
+#### useEffect
 
     Use to provide side effects into the application. Make something happen as a consequence of something else.  
     Side effect will be a result of a state changing.  
@@ -189,6 +189,25 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 
 
+
+
+#### useMemo
+
+#### useCallback
+
+#### useContext
+
+#### useRef
+
+#### UseReducer
+
+#### useImperativeHandle
+
+#### useTransition
+
+#### useDefferedValue
+
+### useLayoutEffect
 
 ### SPA
 
