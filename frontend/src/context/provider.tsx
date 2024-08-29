@@ -8,6 +8,7 @@ interface IProps {
 export const AppContextProvider = ({children}: IProps) => {
     return <AppContext.Provider value={{
                     state: INITIAL_STATE,
+                    userContext: INITIAL_STATE.userInfo
                 }}
             >
                 {children}

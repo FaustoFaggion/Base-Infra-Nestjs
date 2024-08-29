@@ -8,7 +8,7 @@ const cookies = new Cookies();
 
 const Signin = () => {
 
-    const {state} = UseAppContext();
+    const {userContext} = UseAppContext();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -37,11 +37,11 @@ const Signin = () => {
         
         cookies.set('tkn', response.data.access_token, {sameSite: 'strict', expires: new Date(new Date().getTime() + 10000)});
         cookies.set('user_email', response.data.email, {sameSite: 'strict'});
-        state.userInfo.id = response.data.id
-        state.userInfo.email = response.data.email;
-        state.userInfo.first_name = response.data.first_name;
-        state.userInfo.last_name = response.data.last_name;
-        console.log("user: ", state.userInfo);          
+        userContext.id = response.data.id
+        userContext.email = response.data.email;
+        userContext.first_name = response.data.first_name;
+        userContext.last_name = response.data.last_name;
+        console.log("user: ", userContext);          
     }
 
     const handleEmailChange = (event: any) => {
