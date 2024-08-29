@@ -193,8 +193,42 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 #### useMemo
 
+    To update a State you have to trigger and re-render the entire component.  
+  
+    Syntax:  
+        const selectItem = useMemo( 
+            () =>
+        )
+    Link:  
+        - https://www.youtube.com/watch?v=vpE9I_eqHdM&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=3  
+
 #### useCallback
 
+    Used with memo hook.  
+    memo:  
+        -it's a hook used for performance reasons.  
+        - it wraps the component and intercept the render of the component to check if the props are different from one render to another.  
+
+        Syntax:  
+            export default memo(Component)  
+
+    Problem:  
+        In REACT function are different in every render. If a function in a component 1 is passed as a props to a component2 and the component 1 is re-rendered the component 2 will always re-render beacause the props will always be considered as different from the last render, even if you have wrapped component 2 with memo.  
+
+    Solution:  
+        To a function do not be considered different in every render, it's used useCallback.  
+        With useCallback the function is memorized.  
+    
+    Syntax:  
+        const handleFunction = useCallback(
+            () => { 
+            
+            },[]);
+        - [] controll's when the function should be different. It's necesary to re-render the function to re-render the variables used in it.
+    
+    Warning:  
+        The variables from the perspective of the function were memorized too. This values will be  updated for the function when the function be re-rendered.
+        
 #### useContext
 
 #### useRef
