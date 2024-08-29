@@ -231,6 +231,8 @@ npm install @nestjs/mapped-types - Used for Partial-Types
         
 #### useContext
 
+    If the component is not wrapped with ContextProvider, a call to it will be return undefined.
+    It is necessary to create a hook that will throw a error any time useContext return undefined. This will help debug the application.
 #### useRef
 
 #### UseReducer
