@@ -121,7 +121,42 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     npx create-react-app frontend --template typescript
     npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
-### Components
+## React
+
+### Main folders:  
+        
+#### public folder:  
+            
+##### index.html:
+    <noscript>You need to enable JavaScript to run this app.</noscript>:  
+        - This tag is the warning that will appear if you run the code in a browser that not suport javascript. 
+        - The entire project in react runs in javascript.  
+    <div id="root"></div>:  
+        - The only HTML element were all the components will be rendered.  
+        - React use all the componet's code andcreate a virtual DOM and inject in the root element.  
+        - The javascript code will be injected here. - The index.js file is the main javascript file.  
+
+#### src folder
+
+##### index.js file
+
+    - the main javascript file.  
+    - create the root of the entire aplication into the htlm root element of the index.htl file.  
+    - render the App component.  
+    - <React.StrictMode>: used in development by react to generate warnings and errors in the code to help the development.  
+
+##### App.js file
+
+    Where you writte the javascript code.  
+  
+    A component return a JSX code (HTML + JS).  
+
+    export default App:  
+        Means that when the App.js file is imported, the App component will be imported.  
+    
+    
+##### App.ts
+## Components
 
     Links:  
         - https://www.youtube.com/watch?v=F0ZvDcOuBdo&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=1  
@@ -145,16 +180,16 @@ npm install @nestjs/mapped-types - Used for Partial-Types
         - Parent's do not re-render their children.  
 
 
-### Props
+## Props
 
     Links:  
         - https://www.youtube.com/watch?v=jDHBY6tV2SE&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=2  
         - https://www.epicreact.dev/can-you-modify-react-props  
 
     
-### HOOKS
+## HOOKS
 
-#### useState
+### useState
 
     State is data that can changes over time.  
     Data can be different from one render to another.  
@@ -162,8 +197,9 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Links:  
         - https://www.youtube.com/watch?v=V9i3cGD-mts&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2  
 
-#### useEffect
+### useEffect
 
+    It is a async function. It will run in parallel. It will not block the render of the component.
     Use to provide side effects into the application. Make something happen as a consequence of something else.  
     Side effect will be a result of a state changing.  
 
@@ -183,6 +219,13 @@ npm install @nestjs/mapped-types - Used for Partial-Types
             - dependency array.  
             - what useEffect should listen to.  
             - if is empty it runs once when the component is mounted.
+    
+    Warning:  
+        A UseEffect should not be used to set a propertie based on another propertie.  
+        Syntax:  
+            useEffect (() => {  
+                setProp1(prop2 === "value");  
+            }[prop1]);
 
     Links:  
         - https://www.youtube.com/watch?v=-4XpG5_Lj_o&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=2  
@@ -191,7 +234,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 
 
-#### useMemo
+### useMemo
 
     To update a State you have to trigger and re-render the entire component.  
   
@@ -202,7 +245,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Link:  
         - https://www.youtube.com/watch?v=vpE9I_eqHdM&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=3  
 
-#### useCallback
+### useCallback
 
     Used with memo hook.  
     memo:  
@@ -229,41 +272,61 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Warning:  
         The variables from the perspective of the function were memorized too. This values will be  updated for the function when the function be re-rendered.
         
-#### useContext
+### useContext
 
     If the component is not wrapped with ContextProvider, a call to it will be return undefined.
     It is necessary to create a hook that will throw a error any time useContext return undefined. This will help debug the application.
-#### useRef
 
-#### UseReducer
+### useRef
 
-#### useImperativeHandle
+### UseReducer
 
-#### useTransition
+### useImperativeHandle
 
-#### useDefferedValue
+### useTransition
+
+### useDefferedValue
 
 ### useLayoutEffect
 
-### SPA
+    It is a sync function. It will block the render of the component.
+    - The component will render after run useLayoutEffect
+
+    Links:  
+        - https://www.youtube.com/watch?v=9GAt97z8Jc4&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=11  
+    
+    
+          
+
+    
 
 
-### Bootstrap
+## SPA
+
+
+## Bootstrap
 
     npm install bootstrap
 
-### Routes
+## Routes
 
     Links:  
         https://www.youtube.com/watch?v=oTIJunBa6MA  
     Package.json:  
         npm install react-router-dom  
 
-### Axios
+## Axios
 
     npm install axios
 
-### Cookies
+## Jwt
+
+    Links:  
+        - https://www.youtube.com/watch?v=AcYF18oGn6Y&list=PLApy4UwQM3UqAkfITNFzlqoD__UI6X5pb&index=12  
+
+    
+
+## Cookies
 
     Link 
         -  https://www.npmjs.com/package/universal-cookie
@@ -271,7 +334,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
     npm install universal-cookie
 
-### Profile page
+## Profile page
 
     Link:  
         https://www.youtube.com/watch?v=rSXnyQozUJg  
@@ -280,7 +343,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 ## Docker
 
-## Production Mode
+### Production Mode
 
 ### Links
 
