@@ -154,8 +154,46 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     export default App:  
         Means that when the App.js file is imported, the App component will be imported.  
     
+
+### JSX (javscript xml)
+
+    The return of every component in react is write in jsx code.  
+    When npm run a react project, the jsx code is transpilled to javascript. For every element created, React will call the function React.createElement().  
+
+    A component only returns a simgle element:  
+    wrong:  
+        function App() {  
+            return(
+                <h1>Hello</h1>  
+                <p>Welcome</p>  
+            )
+        }  
+    right:  
+        function App() {  
+            return (
+                <div>  
+                    <h1>Hello</h1>  
+                    <p>Welcome</p>  
+                </div>  
+            )
+        }  
+
+    How to have javascript code inside a jsx:  
+
+        function App() {  
+            const name: "MyName"
+            return (
+                <div>  
+                    <h1>Hello {name}</h1>  
+                    <p>Welcome</p>  
+                </div>  
+            )
+        }
+
+#### Links:  
     
-##### App.ts
+    https://www.youtube.com/watch?v=mWp3fkq_qGE&list=PLLGlmW7jT-nROpfmMFDj7ccjCujXOLIey&index=3  
+
 ## Components
 
     Links:  
@@ -178,6 +216,20 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Parent component:  
         - A parent component cannot pass props into the child.  
         - Parent's do not re-render their children.  
+
+    A component only returns a simgle element:  
+    wrong:  
+        function App() {  
+            <h1>Hello</h1>  
+            <p>Welcome</p>  
+        }  
+    right:  
+        function App() {  
+            <div>  
+                <h1>Hello</h1>  
+                <p>Welcome</p>  
+            </div>  
+        }  
 
 
 ## Props
