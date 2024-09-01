@@ -196,9 +196,31 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 ## Components
 
-    Links:  
-        - https://www.youtube.com/watch?v=F0ZvDcOuBdo&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=1  
-        - https://reacttraining.com/blog/react-owner-components  
+    A component is a javascript function.  
+    A component starts with a capital letter. If not, react treat like a function.  
+        ex:  
+            function app() {}; - threat as function.  
+            function App() {}; - threat as component.  
+
+
+### return
+
+    A component returns a jsx code.  
+    A component only returns a simgle element:  
+    wrong:  
+        function App() {  
+            <h1>Hello</h1>  
+            <p>Welcome</p>  
+        }  
+    right:  
+        function App() {  
+            <div>  
+                <h1>Hello</h1>  
+                <p>Welcome</p>  
+            </div>  
+        }
+
+### Types
 
     Client components:
         - Are re-render in the browser.  
@@ -215,28 +237,24 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
     Parent component:  
         - A parent component cannot pass props into the child.  
-        - Parent's do not re-render their children.  
+        - Parent's do not re-render their children.    
 
-    A component only returns a simgle element:  
-    wrong:  
-        function App() {  
-            <h1>Hello</h1>  
-            <p>Welcome</p>  
-        }  
-    right:  
-        function App() {  
-            <div>  
-                <h1>Hello</h1>  
-                <p>Welcome</p>  
-            </div>  
-        }  
+### Links
 
+    https://www.youtube.com/watch?v=F0ZvDcOuBdo&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=1  
+    https://reacttraining.com/blog/react-owner-components  
+    https://www.youtube.com/watch?v=PraIL031lno&list=PLLGlmW7jT-nROpfmMFDj7ccjCujXOLIey&index=5  
 
-## Props
+## P rops
 
-    Links:  
-        - https://www.youtube.com/watch?v=jDHBY6tV2SE&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=2  
-        - https://www.epicreact.dev/can-you-modify-react-props  
+    Props are javscript objects.  
+    They are used to send data or functions across components.  
+
+### Links
+        
+    https://www.youtube.com/watch?v=jDHBY6tV2SE&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=2  
+   
+    https://www.epicreact.dev/can-you-modify-react-props  
 
     
 ## HOOKS
@@ -367,9 +385,11 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Package.json:  
         npm install react-router-dom  
 
-## Axios
+## Fech data with Axios
 
     npm install axios
+
+    
 
 ## Jwt
 

@@ -1,23 +1,16 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Signin from './components/auth/signin'
 import Signup from './components/auth/signup';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { UseAppContext } from './context/hook';
+import Root from './components/root/root';
 import Profile from './components/user/profile/profile';
 import HomePage from './components/homepage/homepage';
 import NotFound from './components/homepage/notFound';
 
 function App() {
-  const {state} = UseAppContext();
 
-  const userInfo = state.userInfo
   const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <HomePage />,
-      errorElement: <NotFound />
-    }, 
     {
       path: '/signin',
       element: <Signin />,
@@ -27,9 +20,21 @@ function App() {
       element: <Signup />
     },
     {
-      path: '/profile',
-      element: <Profile />
-    }
+      path: '/',
+      element: <Root />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          path: '/',
+          element: <HomePage />,
+          index: true 
+        },
+        {
+          path: '/profile',
+          element: <Profile />
+        }
+      ]
+    },
   ])
 
   return (
