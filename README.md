@@ -194,7 +194,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
     https://www.youtube.com/watch?v=mWp3fkq_qGE&list=PLLGlmW7jT-nROpfmMFDj7ccjCujXOLIey&index=3  
 
-## Components
+### Components
 
     A component is a javascript function.  
     A component starts with a capital letter. If not, react treat like a function.  
@@ -203,7 +203,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
             function App() {}; - threat as component.  
 
 
-### return
+#### return
 
     A component returns a jsx code.  
     A component only returns a simgle element:  
@@ -220,7 +220,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
             </div>  
         }
 
-### Types
+#### Types
 
     Client components:
         - Are re-render in the browser.  
@@ -239,27 +239,27 @@ npm install @nestjs/mapped-types - Used for Partial-Types
         - A parent component cannot pass props into the child.  
         - Parent's do not re-render their children.    
 
-### Links
+#### Links
 
     https://www.youtube.com/watch?v=F0ZvDcOuBdo&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=1  
     https://reacttraining.com/blog/react-owner-components  
     https://www.youtube.com/watch?v=PraIL031lno&list=PLLGlmW7jT-nROpfmMFDj7ccjCujXOLIey&index=5  
 
-## P rops
+### P rops
 
     Props are javscript objects.  
     They are used to send data or functions across components.  
 
-### Links
+#### Links
         
     https://www.youtube.com/watch?v=jDHBY6tV2SE&list=PLApy4UwQM3UpqUKS1g5B7reczq3ECvtx0&index=2  
    
     https://www.epicreact.dev/can-you-modify-react-props  
 
     
-## HOOKS
+### HOOKS
 
-### useState
+#### useState
 
     State is data that can changes over time.  
     Data can be different from one render to another.  
@@ -267,7 +267,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Links:  
         - https://www.youtube.com/watch?v=V9i3cGD-mts&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2  
 
-### useEffect
+#### useEffect
 
     It is a async function. It will run in parallel. It will not block the render of the component.
     Use to provide side effects into the application. Make something happen as a consequence of something else.  
@@ -300,11 +300,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Links:  
         - https://www.youtube.com/watch?v=-4XpG5_Lj_o&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=2  
 
-
-
-
-
-### useMemo
+#### useMemo
 
     To update a State you have to trigger and re-render the entire component.  
   
@@ -315,7 +311,7 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Link:  
         - https://www.youtube.com/watch?v=vpE9I_eqHdM&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=3  
 
-### useCallback
+#### useCallback
 
     Used with memo hook.  
     memo:  
@@ -342,22 +338,22 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     Warning:  
         The variables from the perspective of the function were memorized too. This values will be  updated for the function when the function be re-rendered.
         
-### useContext
+#### useContext
 
     If the component is not wrapped with ContextProvider, a call to it will be return undefined.
     It is necessary to create a hook that will throw a error any time useContext return undefined. This will help debug the application.
 
-### useRef
+#### useRef
 
-### UseReducer
+#### UseReducer
 
-### useImperativeHandle
+#### useImperativeHandle
 
-### useTransition
+#### useTransition
 
-### useDefferedValue
+#### useDefferedValue
 
-### useLayoutEffect
+#### useLayoutEffect
 
     It is a sync function. It will block the render of the component.
     - The component will render after run useLayoutEffect
@@ -371,34 +367,34 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
 
 
-## SPA
+### SPA
 
 
-## Bootstrap
+### Bootstrap
 
     npm install bootstrap
 
-## Routes
+### Routes
 
     Links:  
         https://www.youtube.com/watch?v=oTIJunBa6MA  
     Package.json:  
         npm install react-router-dom  
 
-## Fech data with Axios
+### Fech data with Axios
 
     npm install axios
 
     
 
-## Jwt
+### Jwt
 
     Links:  
         - https://www.youtube.com/watch?v=AcYF18oGn6Y&list=PLApy4UwQM3UqAkfITNFzlqoD__UI6X5pb&index=12  
 
     
 
-## Cookies
+### Cookies
 
     Link 
         -  https://www.npmjs.com/package/universal-cookie
@@ -406,14 +402,14 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     
     npm install universal-cookie
 
-## Profile page
+### Profile page
 
     Link:  
         https://www.youtube.com/watch?v=rSXnyQozUJg  
     Package.json:  
         npm install react-select  
 
-## Docker
+### Docker
 
 ### Production Mode
 
@@ -436,9 +432,17 @@ npm install @nestjs/mapped-types - Used for Partial-Types
 
 - It is not necessary to install in Docker the "devDependencies" from package.json
 
-## Versioning
+### Versioning
 
 ### Links
 
     - Versionamento Semântico  
         https://semver.org/lang/pt-BR/  
+
+## Nextjs
+
+### Routing
+
+    * All routes must be placed inside the app folder  
+    * Every file that corresponds to a route must be named page.js or page.ts  
+    * Every folder corresponds to a path segment in the browser URL  
