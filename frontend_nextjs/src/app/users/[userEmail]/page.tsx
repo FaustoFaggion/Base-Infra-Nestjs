@@ -1,7 +1,7 @@
-export default function RouteDetails({params}: 
+export default function UserDetails({params}: 
     {params : {userEmail: string}}) 
 {
     return (
-        <h1>Welcome {params.userEmail}!!</h1>
+        <h1> to Dynamic Route {params.userEmail}!!</h1>
     )
 }
