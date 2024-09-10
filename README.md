@@ -446,3 +446,20 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     * All routes must be placed inside the app folder  
     * Every file that corresponds to a route must be named page.js or page.ts  
     * Every folder corresponds to a path segment in the browser URL  
+
+#### Title Metadata
+
+    * the title field's primary purpose is to define the document title.  
+    * it can be either a string or an object.  
+
+    Syntax:
+        import { Metadate} from "next";
+
+        export const metadata: Metadata = {
+            title: {
+                absolute: "<if in the child, ignore the template>",  
+                default: "<fallback title for child segments that don't specify a title>",  
+                template: "<add a prefix (< %s | <text>) or sufix (<text> | %s) to child title>"  
+            },  
+            description: "<Write some description>",  
+        }  
