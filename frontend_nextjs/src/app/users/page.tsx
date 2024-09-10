@@ -1,11 +1,11 @@
-export default function DynamicRoute() {
+export default function Users() {
     return (
         <>
-            <h1>List of routes!</h1>
+            <h1>List of Users!</h1>
             <ol>
-                <li>Route 1</li>
-                <li>Route 2</li>
-                <li>Route 3</li>
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
             </ol>
         </>
     )
