@@ -18,8 +18,8 @@ let AuthTokenStrategy = class AuthTokenStrategy {
     constructor(authTokenStrategyPort) {
         this.authTokenStrategyPort = authTokenStrategyPort;
     }
-    async generate_access_token(user_id, user_email) {
-        return this.authTokenStrategyPort.generate_access_token(user_id, user_email);
+    async generate_auth_token(type, user_id, user_email) {
+        return this.authTokenStrategyPort.generate_auth_token(type, user_id, user_email);
     }
 };
 exports.AuthTokenStrategy = AuthTokenStrategy;

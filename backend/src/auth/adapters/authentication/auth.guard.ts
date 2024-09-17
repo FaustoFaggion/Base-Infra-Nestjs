@@ -21,7 +21,7 @@ export class AuthGuard implements NestMiddleware {
         }
         try {
             const payload = await this. jwtService.verifyAsync(access_token, {
-                secret: this.config.get<string>('jwt.secret')
+                secret: this.config.get<string>('ACCESS_TOKEN_SECRET')
             });
 
             req['user'] = payload;

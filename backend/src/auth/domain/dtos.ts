@@ -34,11 +34,16 @@ export class LoginResponseDto {
     @IsString()
     access_token:       string;
 
+    @IsNotEmpty()
+    @IsString()
+    refresh_token:      string;
+
     constructor(obj: UserEntity) {
         this.id = obj.id;
         this.email = obj.email;
         this.first_name = obj.first_name;
         this.last_name = obj.last_name;
         this.access_token = null;
+        this.refresh_token = null;
     }
 }

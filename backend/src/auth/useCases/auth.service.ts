@@ -1,4 +1,4 @@
-import { Inject, Injectable, UnauthorizedException } from "@nestjs/common";
+import { Inject, Injectable, NotFoundException, UnauthorizedException } from "@nestjs/common";
 import { LoginDto, LoginResponseDto } from "../domain/dtos";
 import { UserOutputPort } from "src/users/ports/user.output.port";
 import { UserCreateDto } from "src/users/domain/dtos";
@@ -18,6 +18,9 @@ export class AuthService implements AuthPort {
     async signin(dto: LoginDto): Promise<LoginResponseDto> {
 
         const user = await this.userRepositoryPort.findOne(dto.email);
+        if (!user) {
+            throw new NotFoundException;
+        }
 
         let pass: boolean = await this.authPasswordStrategyPort.verifyPassword(dto.password, user.password);
         if (!pass) {
@@ -25,7 +28,8 @@ export class AuthService implements AuthPort {
         }
 
         let response = new LoginResponseDto(user);
-        response.access_token = await this.authTokenStrategy.generate_access_token(user.id, user.email);
+        response.access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
 
         return response;
     }
@@ -37,7 +41,9 @@ export class AuthService implements AuthPort {
         
         const user = await this.userRepositoryPort.create(userDto);
         let response = new LoginResponseDto(user);
-        response.access_token = await this.authTokenStrategy.generate_access_token(user.id, user.email);
+        response.access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
+
         return response;
     }
 

@@ -31,6 +31,7 @@ class LoginResponseDto {
         this.first_name = obj.first_name;
         this.last_name = obj.last_name;
         this.access_token = null;
+        this.refresh_token = null;
     }
 }
 exports.LoginResponseDto = LoginResponseDto;
@@ -59,4 +60,9 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], LoginResponseDto.prototype, "access_token", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], LoginResponseDto.prototype, "refresh_token", void 0);
 //# sourceMappingURL=dtos.js.map

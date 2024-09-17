@@ -18,12 +18,24 @@ let JwtStrategy = class JwtStrategy {
         this.jwtService = jwtService;
         this.config = config;
     }
-    async generate_access_token(user_id, user_email) {
+    async generate_auth_token(type, user_id, user_email) {
         const payload = { sub: user_id, userEmail: user_email };
-        const access_token = await this.jwtService.signAsync(payload);
-        return access_token;
+        let token;
+        if (type.includes('access')) {
+            token = await this.jwtService.signAsync(payload, {
+                expiresIn: this.config.get('ACCESS_TOKEN_EXPIRES_IN'),
+                secret: this.config.get('ACCESS_TOKEN_SECRET')
+            });
+        }
+        if (type.includes('refresh')) {
+            token = await this.jwtService.signAsync(payload, {
+                expiresIn: this.config.get('REFRESH_TOKEN_EXPIRES_IN'),
+                secret: this.config.get('REFRESH_TOKEN_SECRET')
+            });
+        }
+        return token;
     }
-    async verify_access_token(req, access_token) {
+    async verify_auth_token(req, access_token) {
         try {
             const payload = await this.jwtService.verifyAsync(access_token, {
                 secret: this.config.get('JWT_SECRET')

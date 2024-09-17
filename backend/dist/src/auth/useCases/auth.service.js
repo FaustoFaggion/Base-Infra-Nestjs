@@ -24,12 +24,16 @@ let AuthService = class AuthService {
     }
     async signin(dto) {
         const user = await this.userRepositoryPort.findOne(dto.email);
+        if (!user) {
+            throw new common_1.NotFoundException;
+        }
         let pass = await this.authPasswordStrategyPort.verifyPassword(dto.password, user.password);
         if (!pass) {
             throw new common_1.UnauthorizedException;
         }
         let response = new dtos_1.LoginResponseDto(user);
-        response.access_token = await this.authTokenStrategy.generate_access_token(user.id, user.email);
+        response.access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
         return response;
     }
     async signup(dto) {
@@ -37,7 +41,8 @@ let AuthService = class AuthService {
         userDto.password = await this.authPasswordStrategyPort.encryptPassword(dto.password);
         const user = await this.userRepositoryPort.create(userDto);
         let response = new dtos_1.LoginResponseDto(user);
-        response.access_token = await this.authTokenStrategy.generate_access_token(user.id, user.email);
+        response.access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
         return response;
     }
 };
