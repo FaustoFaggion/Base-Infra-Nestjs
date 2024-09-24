@@ -447,6 +447,29 @@ npm install @nestjs/mapped-types - Used for Partial-Types
     * Every file that corresponds to a route must be named page.js or page.ts  
     * Every folder corresponds to a path segment in the browser URL  
 
+#### Folders
+
+##### Private
+
+    Indicates that it is a private implamentation detail and should not be considered by the routing system  
+    The folder and all its subfolders are excluded from routing  
+
+    * For separating UI logic from routing logic  
+    * For consistently organizing internal files across a project  
+    * For sorting and grouping files in code editors  
+    * For avoiding potencial naming conflicts with future Next.js file conventions  
+
+    Syntax:  
+        Prefix the folder name with a '_'
+        _folder
+
+##### Groups
+
+    Allows us to logically group our routes and project files without affecting the URL path structure.
+
+    Syntax:
+        (folder)
+
 #### Title Metadata
 
     * the title field's primary purpose is to define the document title.  
@@ -463,3 +486,13 @@ npm install @nestjs/mapped-types - Used for Partial-Types
             },  
             description: "<Write some description>",  
         }  
+
+
+### Next-Auth
+
+
+
+
+
+
+
