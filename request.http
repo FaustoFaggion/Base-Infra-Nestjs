@@ -1,6 +1,8 @@
 ### Variables
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkMDRmYTU5OS00MTkyLTQxMzQtYWZmYS00MTQwZTFiYTMxNTEiLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjQ3NjQ4MTgsImV4cCI6MTcyNDc2ODQxOH0.If26gxc-zrDBn0opbxKLdXd9FaV2PxOWJn0RcyBa0qQ
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOGQxOWQ1Mi01ZWQwLTQwYmMtOTlmMS04NDg5NDAwOTEwNTciLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzg5NTMsImV4cCI6MTcyNzE4MjU1M30.LdqEy0vgjBiRVy9dxvZe8ZMhJ5edl13tMInr3F7CAIM
+
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOGQxOWQ1Mi01ZWQwLTQwYmMtOTlmMS04NDg5NDAwOTEwNTciLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzg5NTMsImV4cCI6MTcyNzc4Mzc1M30.jaoZXt7RvzIEWCfElMxPEQJQXZDufKkMucZYWIDj-CI
 
 ###
 
@@ -72,7 +74,7 @@ content-type: application/json
 Authorization: Bearer {{access_token}}
 
 {
-    "email": "eu@email.com",
+    "email": "vc@email.com",
     "first_name": "cc",
     "last_name": "er",
     "password": "123"
@@ -94,3 +96,8 @@ Authorization: Bearer {{access_token}}
 
 GET http://localhost:3000/user/find-all
 Authorization: Bearer {{access_token}}
+
+###
+
+GET http://localhost:3000/auth/refresh-token
+Authorization: Refresh {{refresh_token}}

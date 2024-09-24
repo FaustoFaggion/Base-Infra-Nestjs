@@ -6,4 +6,5 @@ export declare class AuthController {
     constructor(authPort: AuthPort);
     signin(dto: LoginDto): Promise<LoginResponseDto>;
     signup(dto: UserCreateDto): Promise<any>;
+    refreshToken(email: string): Promise<String>;
 }

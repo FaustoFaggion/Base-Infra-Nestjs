@@ -21,7 +21,7 @@ let AppModule = class AppModule {
     configure(consumer) {
         consumer
             .apply(auth_guard_1.AuthGuard)
-            .exclude({ path: 'auth/signin', method: common_1.RequestMethod.POST }, { path: 'auth/signup', method: common_1.RequestMethod.POST }, { path: 'user/create', method: common_1.RequestMethod.POST })
+            .exclude({ path: 'auth/signin', method: common_1.RequestMethod.POST }, { path: 'auth/signup', method: common_1.RequestMethod.POST }, { path: 'user/create', method: common_1.RequestMethod.POST }, { path: 'auth/refresh-token', method: common_1.RequestMethod.GET })
             .forRoutes('*');
     }
 };

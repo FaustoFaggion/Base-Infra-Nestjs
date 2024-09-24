@@ -11,4 +11,5 @@ export declare class AuthService implements AuthPort {
     constructor(userRepositoryPort: UserOutputPort, authTokenStrategy: AuthTokenStrategy, authPasswordStrategyPort: AuthPasswordStrategyPort);
     signin(dto: LoginDto): Promise<LoginResponseDto>;
     signup(dto: UserCreateDto): Promise<LoginResponseDto>;
+    refreshToken(email: string): Promise<String>;
 }

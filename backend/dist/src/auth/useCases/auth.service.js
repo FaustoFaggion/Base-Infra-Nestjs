@@ -45,6 +45,10 @@ let AuthService = class AuthService {
         response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
         return response;
     }
+    async refreshToken(email) {
+        console.log(email, "reach refresh token service function");
+        return 'ok';
+    }
 };
 exports.AuthService = AuthService;
 exports.AuthService = AuthService = __decorate([

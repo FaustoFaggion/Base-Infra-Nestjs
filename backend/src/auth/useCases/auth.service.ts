@@ -47,4 +47,9 @@ export class AuthService implements AuthPort {
         return response;
     }
 
+    async refreshToken(email: string): Promise<String> {
+        console.log(email, "reach refresh token service function");
+        return 'ok';
+    }
+
 }
