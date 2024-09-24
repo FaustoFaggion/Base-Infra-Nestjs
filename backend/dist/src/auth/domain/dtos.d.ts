@@ -12,3 +12,6 @@ export declare class LoginResponseDto {
     refresh_token: string;
     constructor(obj: UserEntity);
 }
+export declare class RefreshTokenDto {
+    email: string;
+}

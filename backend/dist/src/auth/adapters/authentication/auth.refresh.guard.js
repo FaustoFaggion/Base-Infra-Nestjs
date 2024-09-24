@@ -37,7 +37,7 @@ let AuthRefreshGuard = class AuthRefreshGuard {
     }
     extractTokenFromHeader(request) {
         const [type, token] = request.headers.authorization?.split(' ') ?? [];
-        console.log('refresh token  ', request);
+        console.log('refresh token  ', token);
         return type === 'Refresh' ? token : undefined;
     }
 };

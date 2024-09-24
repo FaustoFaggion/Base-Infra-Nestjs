@@ -45,9 +45,14 @@ let AuthService = class AuthService {
         response.refresh_token = await this.authTokenStrategy.generate_auth_token('refresh', user.id, user.email);
         return response;
     }
-    async refreshToken(email) {
-        console.log(email, "reach refresh token service function");
-        return 'ok';
+    async refreshToken(dto) {
+        console.log(dto, "reach refresh token service function");
+        const user = await this.userRepositoryPort.findOne(dto.email);
+        if (!user) {
+            throw new common_1.NotFoundException;
+        }
+        let access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        return access_token;
     }
 };
 exports.AuthService = AuthService;

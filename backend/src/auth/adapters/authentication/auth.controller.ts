@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Inject, Post, UseGuards } from "@nestjs/common";
 import { UserCreateDto } from "src/users/domain/dtos";
 import { AuthPort } from "../../ports/auth.port";
-import { LoginDto, LoginResponseDto } from "../../domain/dtos";
+import { LoginDto, LoginResponseDto, RefreshTokenDto } from "../../domain/dtos";
 import { AuthRefreshGuard } from "./auth.refresh.guard";
 
 @Controller('auth')
@@ -22,7 +22,7 @@ export class AuthController {
 
     @UseGuards(AuthRefreshGuard)
     @Get('refresh-token')
-    async refreshToken(@Body() email: string) {
-        return this.authPort.refreshToken(email);
+    async refreshToken(@Body() dto: RefreshTokenDto) {
+        return this.authPort.refreshToken(dto);
     }
 }

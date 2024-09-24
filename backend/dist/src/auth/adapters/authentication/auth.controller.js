@@ -27,8 +27,8 @@ let AuthController = class AuthController {
     async signup(dto) {
         return this.authPort.signup(dto);
     }
-    async refreshToken(email) {
-        return this.authPort.refreshToken(email);
+    async refreshToken(dto) {
+        return this.authPort.refreshToken(dto);
     }
 };
 exports.AuthController = AuthController;
@@ -51,7 +51,7 @@ __decorate([
     (0, common_1.Get)('refresh-token'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [dtos_2.RefreshTokenDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "refreshToken", null);
 exports.AuthController = AuthController = __decorate([

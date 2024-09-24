@@ -36,7 +36,7 @@ export class AuthRefreshGuard implements CanActivate {
 
     private extractTokenFromHeader(request: any): string | undefined {
         const [type, token] = request.headers.authorization?.split(' ') ?? [];
-        console.log('refresh token  ', request);
+        console.log('refresh token  ', token);
         return type === 'Refresh' ? token : undefined;
       }
     

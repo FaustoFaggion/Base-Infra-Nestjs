@@ -1,5 +1,5 @@
 import { UserCreateDto } from "src/users/domain/dtos";
-import { LoginDto, LoginResponseDto } from "../domain/dtos";
+import { LoginDto, LoginResponseDto, RefreshTokenDto } from "../domain/dtos";
 
 export interface AuthPort {
 
@@ -7,5 +7,5 @@ export interface AuthPort {
 
     signup(dto: UserCreateDto): Promise<LoginResponseDto>;
 
-    refreshToken(email: string): Promise<String>;
+    refreshToken(dto: RefreshTokenDto): Promise<String>;
 }

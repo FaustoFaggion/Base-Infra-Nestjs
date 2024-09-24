@@ -1,5 +1,5 @@
 import { Inject, Injectable, NotFoundException, UnauthorizedException } from "@nestjs/common";
-import { LoginDto, LoginResponseDto } from "../domain/dtos";
+import { LoginDto, LoginResponseDto, RefreshTokenDto } from "../domain/dtos";
 import { UserOutputPort } from "src/users/ports/user.output.port";
 import { UserCreateDto } from "src/users/domain/dtos";
 import { AuthPort } from "../ports/auth.port";
@@ -47,9 +47,17 @@ export class AuthService implements AuthPort {
         return response;
     }
 
-    async refreshToken(email: string): Promise<String> {
-        console.log(email, "reach refresh token service function");
-        return 'ok';
+    async refreshToken(dto: RefreshTokenDto): Promise<String> {
+        console.log(dto, "reach refresh token service function");
+        
+        const user = await this.userRepositoryPort.findOne(dto.email);
+        if (!user) {
+            throw new NotFoundException;
+        }
+
+        let access_token = await this.authTokenStrategy.generate_auth_token('access', user.id, user.email);
+        
+        return access_token;
     }
 
 }

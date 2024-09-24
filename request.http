@@ -1,8 +1,9 @@
 ### Variables
 
-@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOGQxOWQ1Mi01ZWQwLTQwYmMtOTlmMS04NDg5NDAwOTEwNTciLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzg5NTMsImV4cCI6MTcyNzE4MjU1M30.LdqEy0vgjBiRVy9dxvZe8ZMhJ5edl13tMInr3F7CAIM
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDg1YmQ2Yi1hYjQ3LTQxNTgtYmUzYi1lODNkNjQ1MWNkMTYiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzk4NTUsImV4cCI6MTcyNzE4MzQ1NX0.lr8mvueDbJiZM3fu2q7fl_6OVb_8OBj8mAnk4jmllg4
 
-@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOGQxOWQ1Mi01ZWQwLTQwYmMtOTlmMS04NDg5NDAwOTEwNTciLCJ1c2VyRW1haWwiOiJ2Y0BlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzg5NTMsImV4cCI6MTcyNzc4Mzc1M30.jaoZXt7RvzIEWCfElMxPEQJQXZDufKkMucZYWIDj-CI
+@refresh_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDg1YmQ2Yi1hYjQ3LTQxNTgtYmUzYi1lODNkNjQ1MWNkMTYiLCJ1c2VyRW1haWwiOiJldUBlbWFpbC5jb20iLCJpYXQiOjE3MjcxNzk4NTUsImV4cCI6MTcyNzc4NDY1NX0.REeZ3MbEoezIj3aPK1rxP6eMzZ3rm1d4REkCuxi6KJM
+
 
 ###
 
@@ -11,7 +12,7 @@ content-type: application/json
 Authorization: Bearer {{access_token}}
 
 {
-    "email": "vc@email.com",
+    "email": "eu@email.com",
     "password": "123"
 }
 
@@ -100,4 +101,9 @@ Authorization: Bearer {{access_token}}
 ###
 
 GET http://localhost:3000/auth/refresh-token
+Content-Type: application/json
 Authorization: Refresh {{refresh_token}}
+
+{
+    "email": "eu@email.com"
+}

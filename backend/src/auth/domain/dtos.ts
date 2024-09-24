@@ -47,3 +47,10 @@ export class LoginResponseDto {
         this.refresh_token = null;
     }
 }
+
+export class RefreshTokenDto {
+
+    @IsEmail()
+    @IsNotEmpty()
+    email:          string;
+}
